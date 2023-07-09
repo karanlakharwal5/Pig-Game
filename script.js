@@ -12,16 +12,31 @@ const btnNew = document.querySelector('.btn--new');
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
-//Set current score values to 0
-score0Element.textContent = 0;
-score1Element.textContent = 0;
-diceElement.classList.add('hidden');
-//console.log(diceElement);
+let scores, currentScore, activePlayer, playing;
 
-const scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let playing = true;
+//Starting Conditions
+const init = function () {
+  //Initialize the game variable and state
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
+
+  score0Element.textContent = 0;
+  score1Element.textContent = 0;
+  score0Element.textContent = 0;
+  score1Element.textContent = 0;
+  current0Score.textContent = 0;
+  current1Score.textContent = 0;
+
+  diceElement.classList.add('hidden');
+  player0Element.classList.remove('player--winner');
+  player1Element.classList.remove('player--winner');
+  player0Element.classList.add('player--active');
+  player1Element.classList.remove('player--active');
+  diceElement.classList.remove('hidden');
+};
+init();
 
 const switchPlayer = function () {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -80,3 +95,4 @@ const holdScores = function () {
 
 btnRoll.addEventListener('click', rollDice);
 btnHold.addEventListener('click', holdScores);
+btnNew.addEventListener('click', init);
