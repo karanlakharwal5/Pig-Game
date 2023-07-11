@@ -60,7 +60,7 @@ const rollDice = function () {
     const dice = Math.trunc(Math.random() * 6) + 1;
     //2.Display dice
     diceElement.classList.remove('hidden');
-    diceElement.src = `dice-${dice}.png`;
+    diceElement.src = `img/dice-${dice}.png`;
 
     //3.Checked for rolled =1 or not
     if (dice !== 1) {
