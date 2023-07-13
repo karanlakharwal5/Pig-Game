@@ -83,7 +83,7 @@ const holdScores = function () {
     document.getElementById(`score--${activePlayer}`).textContent = scores[activePlayer];
     //2. Check if score is >= 100, then finish the game
 
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= 100) {
       playing = false;
       shoutWinner();
       //Finish the game
